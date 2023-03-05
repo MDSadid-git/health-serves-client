@@ -1,9 +1,12 @@
 import React from "react";
+import Banner from "./Banner/Banner";
+import Conduct from "./Conduct/Conduct";
 
 const Home = () => {
   return (
-    <div>
-      <h1>HI home</h1>
+    <div className="max-w-[1500px] mx-auto">
+      <Banner />
+      <Conduct />
     </div>
   );
 };
