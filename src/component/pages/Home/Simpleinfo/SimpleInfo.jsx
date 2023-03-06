@@ -70,7 +70,7 @@ const SimpleInfo = () => {
     },
     {
       _id: 2,
-      title: "Mon - Fri: 09:00 - 17:00",
+      title: "EveryDay: 09:00 - 17:00",
       des: "Support 24/7",
       icon: <CiClock2 />,
     },
@@ -106,7 +106,12 @@ const SimpleInfo = () => {
           ))}
         </div>
         <div className="flex justify-center items-center">
-          <div className="text-left">our Serves</div>
+          <h1
+            data-aos="fade-left"
+            className="text-left text-2xl text-[#D0011C] font-extrabold"
+          >
+            Our Support
+          </h1>
         </div>
       </div>
     </div>

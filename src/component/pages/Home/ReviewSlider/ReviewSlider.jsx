@@ -10,6 +10,7 @@ const ReviewSlider = () => {
       .then((res) => res.json())
       .then((data) => setComment(data));
   }, []);
+
   return (
     <div className="py-10">
       <div className="my-10">
