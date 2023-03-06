@@ -1,17 +1,5 @@
 import React from "react";
 import Marquee from "react-fast-marquee";
-import airCanadaImg from "../../../Assets/client_logos/air-canada.svg";
-import mastercardImg from "../../../Assets/client_logos/mastercard.svg";
-import ayreImg from "../../../Assets/client_logos/ayre.svg";
-import britishCouncilImg from "../../../Assets/client_logos/british-council.svg";
-import cheetosImg from "../../../Assets/client_logos/cheetos.svg";
-import crocsImg from "../../../Assets/client_logos/crocs.svg";
-import etihadImg from "../../../Assets/client_logos/etihad.svg";
-import nikeImg from "../../../Assets/client_logos/nike.svg";
-import starbucksImg from "../../../Assets/client_logos/starbucks.svg";
-import pepsiImg from "../../../Assets/client_logos/pepsi.svg";
-import uniliverImg from "../../../Assets/client_logos/uniliver.svg";
-import ziggoImg from "../../../Assets/client_logos/ziggo.svg";
 
 const Client = () => {
   const logosArr1 = [
