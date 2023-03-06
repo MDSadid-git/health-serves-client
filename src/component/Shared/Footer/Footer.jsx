@@ -1,101 +1,77 @@
-import React from "react";
-import { useForm } from "react-hook-form";
+import React, { useEffect } from "react";
+import logo from "../../Assets/client_logos/ziggo.svg";
 import { Link } from "react-router-dom";
+import { MdMap, MdMail } from "react-icons/md";
+import { BsArrowRightShort, BsTelephoneFill } from "react-icons/bs";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Footer = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-  const handleLoging = (data) => {
-    console.log(data);
-  };
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
   return (
-    <footer className="text-left  bg-gray-800 flex justify-center mt-28 font-poppins-em">
-      <div className="container w-3/4">
-        <div className="p-10 bg-gray-800 text-gray-200">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
-            <div className="mb-5">
-              <h4 className="text-2xl">Doctors Serves</h4>
-              <address>
-                Narayanganj, Dhaka <br />
-                3117 Road <br />
-                Bangladesh <br />
-                <strong>Phone: </strong>01555055609 <br />
-                <strong>Email: </strong>doctorServers@gamil.com
-              </address>
-            </div>
-            <div className="mb-5">
-              <h4 className="text-2xl">Important Link</h4>
-              <ul>
-                <li className="hover:text-violet-400 hover:font-bold">Home</li>
-                <li className="hover:text-violet-400 hover:font-bold">
-                  Student
-                </li>
-                <li className="hover:text-violet-400 hover:font-bold">
-                  Course
-                </li>
-                <li className="hover:text-violet-400 hover:font-bold">
-                  Contract Us
-                </li>
-                <li className="hover:text-violet-400 hover:font-bold">
-                  <Link to={"/careers"}>Careers</Link>
-                </li>
-              </ul>
-            </div>
-            <div className="mb-5">
-              <h4 className="text-2xl">Our Services</h4>
-              <ul>
-                <li className="hover:text-violet-400 hover:font-bold">
-                  Complete Web Development
-                </li>
-                <li className="hover:text-violet-400 hover:font-bold">
-                  Complete JavaScript course
-                </li>
-                <li className="hover:text-violet-400 hover:font-bold">
-                  Complete Python course
-                </li>
-                <li className="hover:text-violet-400 hover:font-bold">
-                  Complete c++ course
-                </li>
-                <li className="hover:text-violet-400 hover:font-bold">
-                  Complete rust course
-                </li>
-              </ul>
-            </div>
-            <div className="mb-5">
-              <h4 className="text-2xl">Join Our Newsletter</h4>
-              <p>
-                Join 25,000 others and never miss out on new tips, tutorials,
-                and more
-              </p>
-              <form onSubmit={handleSubmit(handleLoging)}>
-                <div className="form-control w-full ">
-                  <label className="label block m-0">
-                    <span className="label-text">Enter your work Email</span>
-                  </label>
-                  <input
-                    type="email"
-                    className=" my-2 p-1 rounded w-full"
-                    {...register("email", { required: true })}
-                  />
-                  {errors.email && (
-                    <p className="text-red-500">Email is required</p>
-                  )}
-                  <input
-                    className="bg-violet-700 hover:bg-violet-400 text-white hover:text-black mt-1 font-bold rounded w-full p-1"
-                    type="submit"
-                    value={`Start Now`}
-                  />
-                </div>
-              </form>
-            </div>
-          </div>
+    <div className="bg-[#222222] text-[#666666] lg:p-24 p-5" data-aos="zoom-in">
+      <div className="flex flex-col lg:flex-row">
+        <div className="w-2/4">
+          <img src={logo} alt="" className="w-28" />
+
+          <p className="mb-5">
+            Tractor is a premium WordPress theme embracing predominant features,
+            outstanding pre-designed demos, custom page layouts, and responsive
+            page building plugins.
+          </p>
+          <button className="text-[#fff] font-bold text-sm flex items-center">
+            SEE MORE <BsArrowRightShort className="text-xl text-[#D0011C]" />
+          </button>
         </div>
-        <div className="text-center py-5 bg-gray-800 text-gray-200"></div>
+        <div className="lg:w-2/4 mx-5">
+          <h5 className="text-[#fff] font-bold mb-5">CONTACT US</h5>
+          <hr className="border border-[#3D3D3D] mb-5" />
+          <p className="flex items-center">
+            <MdMap className="text-xl mr-3 my-4 text-[#D0011C]" />
+            183 Dhaka, Narayangnaj
+          </p>
+          <p className="flex items-center">
+            <BsTelephoneFill className="text-xl mr-3 my-4 text-[#D0011C]" />
+            (+880)000.000.000
+          </p>
+          <p className="flex items-center">
+            <MdMail className="text-xl mr-3 my-4 text-[#D0011C]" />
+            health@gmail.com
+          </p>
+        </div>
+        <div className="lg:w-2/4 mx-5">
+          <h5 className="text-[#fff] font-bold mb-5">EXTRA LINKS</h5>
+          <hr className="border border-[#3D3D3D] mb-9" />
+          <p className="my-3 hover:underline cursor-pointer">Features</p>
+          <p className="my-3 hover:underline cursor-pointer">Support</p>
+          <p className="my-3 hover:underline cursor-pointer">Services</p>
+          <p className="my-3 hover:underline cursor-pointer">History</p>
+          <p className="my-3 hover:underline cursor-pointer">Dealers</p>
+        </div>
+        <div className="lg:w-2/4 mx-5">
+          <h5 className="text-[#fff] font-bold mb-5">NEWS LETTER</h5>
+          <hr className="border border-[#3D3D3D] mb-9" />
+          <form>
+            <input
+              type="text"
+              placeholder="Enter your email"
+              className="py-3 px-5 w-full"
+            />
+            <button
+              className="bg-[#D0011C] hover-effect px-10 py-4 my-5 text-sm font-bold text-[#fff] hover:bg-[#fff] hover:text-[#000] duration-300 ease-out"
+              type="submit"
+            >
+              SIGN UP
+            </button>
+          </form>
+        </div>
       </div>
-    </footer>
+      <p className="mt-10 text-center">
+        &copy; 2023 All Rights Reserved by Saleh Ahmed Mahin
+      </p>
+    </div>
   );
 };
 

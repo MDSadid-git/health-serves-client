@@ -19,32 +19,37 @@ const Banner = () => {
             className="w-1/2 rounded-lg shadow-2xl"
             alt="logo"
           />
-          <div className="mx-auto" data-aos="fade-up">
-            <TypeAnimation
-              sequence={[
-                "Do people like attending? ",
-                1000,
-                "Will be a success or a flop?",
-                1000,
-                "Are actually satisfied?",
-                1000,
-                "Our Doctors happy at work?",
-                1000,
-              ]}
-              //  Replacing previous Text
-              style={{ fontSize: "32px", fontWeight: 600 }}
-              wrapper="h3"
-              repeat={Infinity}
-            />
-            <p className="mt-4 max-w-lg sm:text-xl sm:leading-relaxed">
+          <div className="mx-auto">
+            <p data-aos="fade-down">
+              <TypeAnimation
+                sequence={[
+                  "Do people like attending? ",
+                  1000,
+                  "Will be a success or a flop?",
+                  1000,
+                  "Are actually satisfied?",
+                  1000,
+                  "Our Doctors happy at work?",
+                  1000,
+                ]}
+                //  Replacing previous Text
+                style={{ fontSize: "32px", fontWeight: 600 }}
+                wrapper="h3"
+                repeat={Infinity}
+              />
+            </p>
+            <p
+              data-aos="zoom-in"
+              className="mt-4 max-w-lg sm:text-xl sm:leading-relaxed"
+            >
               Best Team of Dedicated Cancer Doctors and World Class Technology
               for Your Treatment. Receive Timely & Comprehensive Cancer
               Treatment at Kokilaben Hospital in Mumbai. Personalised Care.
               Affordable Treatments.
             </p>
-            <div>
+            <div data-aos="fade-up">
               <Link to="/login">
-                <button className="btn btn:md btn-primary rounded-none my-5 ">
+                <button className="bg-[#D0011C] hover-effect px-10 py-4 my-5 text-sm font-bold text-[#fff] hover:bg-sky-400 duration-300 ease-out">
                   Get Started
                 </button>
               </Link>
