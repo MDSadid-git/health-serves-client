@@ -13,7 +13,7 @@ const Footer = () => {
   return (
     <div className="bg-[#222222] text-[#666666] lg:p-24 p-5" data-aos="zoom-in">
       <div className="flex flex-col lg:flex-row">
-        <div className="w-2/4">
+        <div className="w-2/4 m-5 ">
           <img src={logo} alt="" className="w-28" />
 
           <p className="mb-5">
@@ -69,7 +69,7 @@ const Footer = () => {
         </div>
       </div>
       <p className="mt-10 text-center">
-        &copy; 2023 All Rights Reserved by Saleh Ahmed Mahin
+        &copy; 2023 All Rights Reserved by MD Sadid
       </p>
     </div>
   );

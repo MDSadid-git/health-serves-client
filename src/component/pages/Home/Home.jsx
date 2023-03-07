@@ -4,6 +4,7 @@ import Client from "./ClientAll/Client";
 import Conduct from "./Conduct/Conduct";
 import ReviewSlider from "./ReviewSlider/ReviewSlider";
 import SimpleInfo from "./Simpleinfo/SimpleInfo";
+import SeniorDoctor from "./SeniorDoctor/SeniorDoctor";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <SimpleInfo />
       <Banner />
       <Conduct />
+      <SeniorDoctor />
       <Client />
       <ReviewSlider />
     </div>

@@ -23,13 +23,13 @@ const Banner = () => {
             <p data-aos="fade-down">
               <TypeAnimation
                 sequence={[
-                  "Do people like attending? ",
+                  "Do people like it? ",
                   1000,
-                  "Will be a success or a flop?",
+                  "Will be a success?",
                   1000,
-                  "Are actually satisfied?",
+                  "I actually satisfied?",
                   1000,
-                  "Our Doctors happy at work?",
+                  "Our Doctors work!!",
                   1000,
                 ]}
                 //  Replacing previous Text
