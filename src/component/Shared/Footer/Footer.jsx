@@ -17,9 +17,8 @@ const Footer = () => {
           <img src={logo} alt="" className="w-28" />
 
           <p className="mb-5">
-            Tractor is a premium WordPress theme embracing predominant features,
-            outstanding pre-designed demos, custom page layouts, and responsive
-            page building plugins.
+            A platform for finding doctors serves. A single place where find the
+            best doctors and any issues we give support to our patients.
           </p>
           <button className="text-[#fff] font-bold text-sm flex items-center">
             SEE MORE <BsArrowRightShort className="text-xl text-[#D0011C]" />
