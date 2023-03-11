@@ -1,33 +1,41 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import logo from "../../Assets/DFS-Logo-Statement.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const { user, logOut } = useState();
+  const navigate = useNavigate();
+
+  const handleLogOut = async () => {
+    await logOut();
+    // toast.success("Logout successfull");
+    navigate("/");
+  };
   const menuBar = (
     <React.Fragment>
-      <li>
+      <li className="hover:text-[#D0011C]">
         <Link to="/">Home</Link>
       </li>
-      <li>
+      <li className="hover:text-[#D0011C]">
         <Link to="/">Appointment</Link>
       </li>
-      <li>
+      <li className="hover:text-[#D0011C]">
         <Link to="/">About</Link>
       </li>
-      <li>
+      <li className="hover:text-[#D0011C]">
         <Link to="/">Reviews</Link>
       </li>
-      <li>
+      <li className="hover:text-[#D0011C]">
         <Link to="/">Login</Link>
       </li>
     </React.Fragment>
   );
   return (
     <div className="max-w-[1500px] mx-auto">
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-base-100 ">
         <div className="navbar-start">
           <div className="dropdown">
-            <label tabIndex={0} className="lg:hidden">
+            <label tabIndex={0} className="btn btn-ghost lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -45,22 +53,58 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-compact dropdown-content hover:border-b-2 mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 font-bold"
             >
               {menuBar}
             </ul>
           </div>
-          <Link to="/" className="">
+          <Link
+            to="/"
+            className="text-emerald-400 font-bold normal-case md:text-4xl text-xl"
+          >
             <img src={logo} alt="logo" className="w-20 bg-cover" />
           </Link>
         </div>
+
+        {/* Big Screen */}
+
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">{menuBar}</ul>
+          <ul className="menu menu-horizontal px-1 font-bold">{menuBar}</ul>
         </div>
         <div className="navbar-end">
-          <a href="/" className="btn">
-            Get started
-          </a>
+          {user?.uid ? (
+            <Link
+              className="md:mr-4 mr-3 hover:text-[#D0011C] font-bold"
+              onClick={handleLogOut}
+            >
+              Log Out
+            </Link>
+          ) : (
+            <Link
+              to="/login"
+              className="md:mr-4 mr-3 hover:text-[#D0011C] font-bold"
+            >
+              Log In
+            </Link>
+          )}
+
+          {user?.uid ? (
+            <div className="hidden">
+              <Link
+                to="/register"
+                className="btn border-none bg-[#D0011C] hover:bg-[#D0011C]"
+              >
+                Get started
+              </Link>
+            </div>
+          ) : (
+            <Link
+              to="/register"
+              className="btn border-none bg-[#D0011C] hover:bg-[#e6334b]"
+            >
+              Get started
+            </Link>
+          )}
         </div>
       </div>
     </div>
