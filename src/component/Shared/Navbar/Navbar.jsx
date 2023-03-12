@@ -17,7 +17,7 @@ const Navbar = () => {
         <Link to="/">Home</Link>
       </li>
       <li className="hover:text-[#D0011C]">
-        <Link to="/">Appointment</Link>
+        <Link to="/appointment">Appointment</Link>
       </li>
       <li className="hover:text-[#D0011C]">
         <Link to="/">About</Link>
@@ -25,9 +25,9 @@ const Navbar = () => {
       <li className="hover:text-[#D0011C]">
         <Link to="/">Reviews</Link>
       </li>
-      <li className="hover:text-[#D0011C]">
+      {/* <li className="hover:text-[#D0011C]">
         <Link to="/">Login</Link>
-      </li>
+      </li> */}
     </React.Fragment>
   );
   return (
@@ -100,7 +100,7 @@ const Navbar = () => {
           ) : (
             <Link
               to="/register"
-              className="btn border-none bg-[#D0011C] hover:bg-[#e6334b]"
+              className="btn border-none bg-[#D0011C] hover:bg-sky-400"
             >
               Get started
             </Link>
