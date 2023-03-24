@@ -1,7 +1,7 @@
 [
   {
     "_id": 1,
-    "name": "Teeth Orthodontics",
+    "name": "Eye Specialist",
     "slots": [
       "08.00 AM - 08.30 AM",
       "08.30 AM - 09.00 AM",
@@ -23,7 +23,7 @@
   },
   {
     "_id": 2,
-    "name": "Cosmetic Dentistry",
+    "name": "Dentistry Specialist",
     "slots": [
       "08.00 AM - 08.30 AM",
       "08.30 AM - 09.00 AM",
@@ -45,7 +45,7 @@
   },
   {
     "_id": 3,
-    "name": "Teeth Cleaning",
+    "name": "Heart Specialist",
     "slots": [
       "08.00 AM - 08.30 AM",
       "08.30 AM - 09.00 AM",
@@ -67,7 +67,7 @@
   },
   {
     "_id": 4,
-    "name": "Cavity Protection",
+    "name": "Cardiologist Specialist",
     "slots": [
       "08.00 AM - 08.30 AM",
       "08.30 AM - 09.00 AM",
@@ -89,7 +89,7 @@
   },
   {
     "_id": 5,
-    "name": "Pediatric Dental",
+    "name": "COVID-19 Specialist",
     "slots": [
       "08.00 AM - 08.30 AM",
       "08.30 AM - 09.00 AM",
@@ -111,7 +111,7 @@
   },
   {
     "_id": 6,
-    "name": "Oral Surgery",
+    "name": "HIV Specialist",
     "slots": [
       "08.00 AM - 08.30 AM",
       "08.30 AM - 09.00 AM",

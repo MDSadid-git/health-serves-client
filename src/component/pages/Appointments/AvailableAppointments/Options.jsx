@@ -1,6 +1,6 @@
 import React from "react";
 
-const Options = ({ serves }) => {
+const Options = ({ serves, setTreatment }) => {
   const { name, slots } = serves;
   return (
     <div>
@@ -14,8 +14,15 @@ const Options = ({ serves }) => {
           </p>
           <p>{}</p>
           <div className="card-actions justify-end">
-            <button className="btn bg-sky-400 duration-300 ease-out border-none w-full">
-              Learn now!
+            <button className="btn bg-sky-400 duration-300 hover:bg-[#D0011C] ease-out border-none w-full">
+              <label
+                htmlFor="appointmentModel"
+                onClick={() => {
+                  setTreatment(serves);
+                }}
+              >
+                Book Appointment
+              </label>
             </button>
           </div>
         </div>
