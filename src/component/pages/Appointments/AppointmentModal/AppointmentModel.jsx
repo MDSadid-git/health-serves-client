@@ -1,6 +1,7 @@
+import { format } from "date-fns";
 import React from "react";
 
-const AppointmentModel = ({ treatment }) => {
+const AppointmentModel = ({ treatment, seletDate }) => {
   return (
     <>
       <input type="checkbox" id="appointmentModel" className="modal-toggle" />
@@ -13,10 +14,35 @@ const AppointmentModel = ({ treatment }) => {
             ✕
           </label>
           <h3 className="text-lg font-bold">{treatment?.name}</h3>
-          <p className="py-4">
-            You've been selected for a chance to get one year of subscription to
-            use Wikipedia for free!
-          </p>
+          <form>
+            <input
+              type="text"
+              placeholder="Type here"
+              className="input input-bordered input-sm w-full my-3 text-center py-5"
+              value={`${format(seletDate, "PP")}`}
+              disabled
+            />
+            <input
+              type="text"
+              placeholder="Type here"
+              className="input input-bordered input-sm w-full my-3"
+            />
+            <input
+              type="text"
+              placeholder="Type here"
+              className="input input-bordered input-sm w-full my-3"
+            />
+            <input
+              type="text"
+              placeholder="Type here"
+              className="input input-bordered input-sm w-full my-3"
+            />
+            <input
+              type="submit"
+              value="Submit"
+              className="input input-bordered input-sm w-full my-3  bg-sky-400 duration-300 hover:bg-[#D0011C] ease-out text-white font-extrabold"
+            />
+          </form>
         </div>
       </div>
     </>

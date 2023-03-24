@@ -14,16 +14,15 @@ const Options = ({ serves, setTreatment }) => {
           </p>
           <p>{}</p>
           <div className="card-actions justify-end">
-            <button className="btn bg-sky-400 duration-300 hover:bg-[#D0011C] ease-out border-none w-full">
-              <label
-                htmlFor="appointmentModel"
-                onClick={() => {
-                  setTreatment(serves);
-                }}
-              >
-                Book Appointment
-              </label>
-            </button>
+            <label
+              htmlFor="appointmentModel"
+              onClick={() => {
+                setTreatment(serves);
+              }}
+              className="btn bg-sky-400 duration-300 hover:bg-[#D0011C] ease-out border-none w-full"
+            >
+              Book Appointment
+            </label>
           </div>
         </div>
       </div>
