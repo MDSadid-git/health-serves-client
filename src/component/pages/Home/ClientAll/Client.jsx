@@ -74,16 +74,16 @@ const Client = () => {
         Our All Doctors
       </h3>
       <Marquee direction="right" speed={50} pauseOnHover>
-        {logosArr1.map((logo) => (
-          <div className="w-60" data-aos="fade-down">
+        {logosArr1.map((logo, i) => (
+          <div key={i} className="w-60" data-aos="fade-down">
             <img className="w-4/6" src={logo.image} alt="" />
           </div>
         ))}
       </Marquee>
 
       <Marquee direction="left" speed={50} pauseOnHover>
-        {logosArr2.map((logo) => (
-          <div className="w-60" data-aos="fade-up">
+        {logosArr2.map((logo, i) => (
+          <div key={i} className="w-60" data-aos="fade-up">
             <img className="w-4/6" src={logo.image} alt="" />
           </div>
         ))}

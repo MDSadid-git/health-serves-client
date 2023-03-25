@@ -12,9 +12,9 @@ const Options = ({ serves, setTreatment }) => {
             {slots.length === 0 ? "" : slots.length}
             {slots.length > 1 ? " spaces" : "No Spaces"} Available
           </p>
-          <p>{}</p>
           <div className="card-actions justify-end">
             <label
+              disabled={slots.length === 0}
               htmlFor="appointmentModel"
               onClick={() => {
                 setTreatment(serves);

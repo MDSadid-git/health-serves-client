@@ -1,14 +1,16 @@
 import React, { useContext, useState } from "react";
 import logo from "../../Assets/DFS-Logo-Statement.png";
 import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../../contexts/AuthProvider";
+import { toast } from "react-hot-toast";
 
 const Navbar = () => {
-  const { user, logOut } = useState();
+  const { user, logOut } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleLogOut = async () => {
     await logOut();
-    // toast.success("Logout successfull");
+    toast.success("Logout successfull");
     navigate("/");
   };
   const menuBar = (

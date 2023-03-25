@@ -1,7 +1,25 @@
 import { format } from "date-fns";
 import React from "react";
 
-const AppointmentModel = ({ treatment, seletDate }) => {
+const AppointmentModel = ({ treatment, seletDate, setTreatment }) => {
+  const handleModleAppointment = (event) => {
+    event.preventDefault();
+    const from = event.target;
+    const slot = from.slot.value;
+    const name = from.name.value;
+    const email = from.email.value;
+    const phone = from.phone.value;
+    const bookAppontment = {
+      appointmentDate: format(seletDate, "PP"),
+      treatment: treatment?.name,
+      patient: name,
+      slot,
+      email,
+      phone,
+    };
+    console.log(bookAppontment);
+    setTreatment(null);
+  };
   return (
     <>
       <input type="checkbox" id="appointmentModel" className="modal-toggle" />
@@ -14,7 +32,7 @@ const AppointmentModel = ({ treatment, seletDate }) => {
             ✕
           </label>
           <h3 className="text-lg font-bold">{treatment?.name}</h3>
-          <form>
+          <form onSubmit={handleModleAppointment}>
             <input
               type="text"
               placeholder="Type here"
@@ -22,20 +40,33 @@ const AppointmentModel = ({ treatment, seletDate }) => {
               value={`${format(seletDate, "PP")}`}
               disabled
             />
+            <select
+              name="slot"
+              className="select select-bordered select-sm w-full "
+            >
+              {treatment?.slots.map((slot, i) => (
+                <option key={i} value={slot}>
+                  {slot}
+                </option>
+              ))}
+            </select>
             <input
               type="text"
-              placeholder="Type here"
+              placeholder="Name"
               className="input input-bordered input-sm w-full my-3"
+              name="name"
             />
             <input
               type="text"
-              placeholder="Type here"
+              placeholder="Email"
               className="input input-bordered input-sm w-full my-3"
+              name="email"
             />
             <input
               type="text"
-              placeholder="Type here"
+              placeholder="Phone"
               className="input input-bordered input-sm w-full my-3"
+              name="phone"
             />
             <input
               type="submit"

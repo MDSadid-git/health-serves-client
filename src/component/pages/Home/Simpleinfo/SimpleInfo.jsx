@@ -61,7 +61,7 @@ const SimpleInfo = () => {
     ]
   );
 
-  const data = [
+  const datatas = [
     {
       _id: 1,
       title: "health@gmail.com",
@@ -91,8 +91,11 @@ const SimpleInfo = () => {
     <div className="hidden lg:block w-full">
       <div className="flex  ">
         <div ref={sliderRef} className="keen-slider">
-          {data.map((d) => (
-            <div className="keen-slider__slide py-7 flex items-center w-full">
+          {datatas.map((d, i) => (
+            <div
+              key={i}
+              className="keen-slider__slide py-7 flex items-center w-full"
+            >
               <div className="flex">
                 <h3 className="text-4xl text-[#D0011C] mx-4" data-aos="zoom-in">
                   {d.icon}

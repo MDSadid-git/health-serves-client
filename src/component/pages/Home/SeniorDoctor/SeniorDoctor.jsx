@@ -38,7 +38,6 @@ const Happens = () => {
                     className="h-[600px] p-8"
                     src="https://thumbs.dreamstime.com/b/senior-doctor-writing-reports-27402552.jpg"
                     alt=""
-                    srcset=""
                     data-aos="fade-right"
                   />
                 )}
@@ -49,7 +48,6 @@ const Happens = () => {
                     className="h-[600px] p-8"
                     src="https://thumbs.dreamstime.com/b/portrait-senior-doctor-13798578.jpg"
                     alt=""
-                    srcset=""
                     data-aos="fade-right"
                   />
                 )}
@@ -60,7 +58,6 @@ const Happens = () => {
                     className="h-[600px] p-8"
                     src="https://media.istockphoto.com/id/667825072/photo/confident-smiling-doctor.jpg?s=612x612&w=0&k=20&c=-m8DFpfSOeRc18M0lQe6o5bnDs1l988llgMSnsEBcbo="
                     alt=""
-                    srcset=""
                     data-aos="fade-right"
                   />
                 )}
@@ -71,7 +68,6 @@ const Happens = () => {
                     className="h-[600px] p-8"
                     src="https://t3.ftcdn.net/jpg/00/56/14/06/360_F_56140630_LBfCi6TnS9NOYvFmNV9VzqDbzaIdvuP7.jpg"
                     alt=""
-                    srcset=""
                     data-aos="fade-right"
                   />
                 )}
@@ -129,7 +125,6 @@ const Happens = () => {
                 className=" p-8"
                 src="https://thumbs.dreamstime.com/b/senior-doctor-writing-reports-27402552.jpg"
                 alt=""
-                srcset=""
               />
             </div>
             <div data-aos="zoom-in">
@@ -142,7 +137,6 @@ const Happens = () => {
                 className=" p-8"
                 src="https://thumbs.dreamstime.com/b/portrait-senior-doctor-13798578.jpg"
                 alt=""
-                srcset=""
               />
             </div>
             <div data-aos="zoom-in">
@@ -155,7 +149,6 @@ const Happens = () => {
                 className=" p-8"
                 src="https://media.istockphoto.com/id/667825072/photo/confident-smiling-doctor.jpg?s=612x612&w=0&k=20&c=-m8DFpfSOeRc18M0lQe6o5bnDs1l988llgMSnsEBcbo="
                 alt=""
-                srcset=""
               />
             </div>
             <div data-aos="zoom-in">
@@ -168,7 +161,6 @@ const Happens = () => {
                 className=" p-8"
                 src="https://t3.ftcdn.net/jpg/00/56/14/06/360_F_56140630_LBfCi6TnS9NOYvFmNV9VzqDbzaIdvuP7.jpg"
                 alt=""
-                srcset=""
               />
             </div>
           </div>

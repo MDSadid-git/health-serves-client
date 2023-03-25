@@ -20,24 +20,26 @@ const Banner = () => {
             alt="logo"
           />
           <div className="mx-auto">
-            <p data-aos="fade-down">
-              <TypeAnimation
-                sequence={[
-                  "Do people like it? ",
-                  1000,
-                  "Will be a success?",
-                  1000,
-                  "I actually satisfied?",
-                  1000,
-                  "Our Doctors work!!",
-                  1000,
-                ]}
-                //  Replacing previous Text
-                style={{ fontSize: "32px", fontWeight: 600 }}
-                wrapper="h3"
-                repeat={Infinity}
-              />
-            </p>
+            <h3 data-aos="fade-down">
+              <span>
+                <TypeAnimation
+                  sequence={[
+                    "Do people like it? ",
+                    1000,
+                    "Will be a success?",
+                    1000,
+                    "I actually satisfied?",
+                    1000,
+                    "Our Doctors work!!",
+                    1000,
+                  ]}
+                  //  Replacing previous Text
+                  style={{ fontSize: "32px", fontWeight: 600 }}
+                  wrapper="h3"
+                  repeat={Infinity}
+                />
+              </span>
+            </h3>
             <p
               data-aos="zoom-in"
               className="mt-4 max-w-lg sm:text-xl sm:leading-relaxed"
