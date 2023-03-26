@@ -36,7 +36,7 @@ const Navbar = () => {
   );
   return (
     <div className="max-w-[1500px] mx-auto">
-      <div className="navbar bg-base-100 ">
+      <div className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -79,7 +79,7 @@ const Navbar = () => {
           {user?.uid ? (
             <>
               <Link
-                className="md:mr-4 mr-3 hover:text-[#D0011C] font-bold btn"
+                className="md:mr-4 mr-3 hover:text-[#D0011C] font-bold hover:bg-base-200 p-2 rounded-lg"
                 onClick={handleLogOut}
               >
                 Log Out
@@ -89,7 +89,7 @@ const Navbar = () => {
           ) : (
             <Link
               to="/login"
-              className="md:mr-4 mr-3 hover:text-[#D0011C] font-bold"
+              className="md:mr-1 mr-1 hover:text-[#D0011C] font-bold hover:bg-base-200 p-2 rounded-lg"
             >
               Log In
             </Link>
@@ -99,7 +99,7 @@ const Navbar = () => {
             <div className="hidden">
               <Link
                 to="/register"
-                className="btn border-none bg-[#D0011C] hover:bg-[#D0011C]"
+                className="p-2 bg-[#D0011C] hover:bg-[#D0011C]"
               >
                 Get started
               </Link>
@@ -107,7 +107,7 @@ const Navbar = () => {
           ) : (
             <Link
               to="/register"
-              className="btn border-none bg-[#D0011C] hover:bg-sky-400"
+              className="p-2 border-none bg-[#D0011C] hover:bg-sky-400 rounded-lg text-white font-bold"
             >
               Get started
             </Link>
