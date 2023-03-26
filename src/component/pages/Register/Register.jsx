@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider";
+import { UseTitle } from "../../Hooks/UseTitle";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
@@ -12,10 +13,8 @@ const Register = () => {
   const navigate = useNavigate();
   const [createUserEmail, setCreateUserEmail] = useState("");
   const from2 = location.state?.from?.pathname || "/";
+  UseTitle("Register");
 
-  const handleLogIn = () => {
-    navigate("/");
-  };
   const {
     register,
     handleSubmit,
@@ -30,7 +29,7 @@ const Register = () => {
         setCreateUserEmail(data.email);
 
         toast.success("Creat New Account!!!");
-        handleLogIn();
+        navigate(from2, { replace: true });
         console.log(user);
       })
       .catch((error) => {

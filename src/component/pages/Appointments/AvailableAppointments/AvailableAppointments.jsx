@@ -1,3 +1,4 @@
+import { useQuery } from "@tanstack/react-query";
 import { format } from "date-fns";
 import React, { useEffect, useState } from "react";
 import AppointmentModel from "../AppointmentModal/AppointmentModel";
@@ -11,6 +12,13 @@ const AvailableAppointments = ({ seletDate }) => {
       .then((res) => res.json())
       .then((data) => setAppointmentServes(data));
   }, []);
+  // const { data: appointmentServes = [] } = useQuery({
+  //   queryKey: ["appointmentserves"],
+  //   queryFn: () =>
+  //     fetch("http://localhost:5000/appointmentserves").then((res) =>
+  //       res.json()
+  //     ),
+  // });
   return (
     <div className="my-20 text-center">
       <p className="text-center my-5">
