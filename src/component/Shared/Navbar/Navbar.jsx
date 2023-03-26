@@ -27,9 +27,11 @@ const Navbar = () => {
       <li className="hover:text-[#D0011C]">
         <Link to="/">Reviews</Link>
       </li>
-      {/* <li className="hover:text-[#D0011C]">
-        <Link to="/">Login</Link>
-      </li> */}
+      {user?.uid && (
+        <li className="hover:text-[#D0011C]">
+          <Link to="/dashboard">Dashboard</Link>
+        </li>
+      )}
     </React.Fragment>
   );
   return (
@@ -75,12 +77,15 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           {user?.uid ? (
-            <Link
-              className="md:mr-4 mr-3 hover:text-[#D0011C] font-bold"
-              onClick={handleLogOut}
-            >
-              Log Out
-            </Link>
+            <>
+              <Link
+                className="md:mr-4 mr-3 hover:text-[#D0011C] font-bold btn"
+                onClick={handleLogOut}
+              >
+                Log Out
+              </Link>
+              {/* <h1>Profile</h1> */}
+            </>
           ) : (
             <Link
               to="/login"

@@ -4,23 +4,18 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider";
-// import useTitle from "../../hooks/useTitle";
-// import useToken from "../../hooks/useToken";
-
-// const googleProvider = new GoogleAuthProvider();
 
 const Register = () => {
-  // useTitle("SingUp");
   const { createUser } = useContext(AuthContext);
   const [signUpError, setSignUPError] = useState("");
   const location = useLocation();
   const navigate = useNavigate();
   const [createUserEmail, setCreateUserEmail] = useState("");
-  // const [token] = useToken(createUserEmail);
   const from2 = location.state?.from?.pathname || "/";
-  // if (token) {
-  //   navigate(from2, { replace: true });
-  // }
+
+  const handleLogIn = () => {
+    navigate("/");
+  };
   const {
     register,
     handleSubmit,
@@ -33,21 +28,13 @@ const Register = () => {
       .then((result) => {
         const user = result.user;
         setCreateUserEmail(data.email);
-        // const userInfo = {
-        //   displayName: data.name,
-        // };
-        // updateUser(userInfo)
-        //   .then(() => {})
-        //   .catch((err) => {
-        //     console.log(err);
-        //   });
+
         toast.success("Creat New Account!!!");
-        // saveUser(data.email, data.name, data.specialty);
+        handleLogIn();
         console.log(user);
       })
       .catch((error) => {
         console.log(error.message);
-        // setSignUPError(error.message);
       });
   };
   const UserGoogle = () => {
