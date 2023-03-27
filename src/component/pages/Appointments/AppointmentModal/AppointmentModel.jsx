@@ -20,7 +20,7 @@ const AppointmentModel = ({ treatment, seletDate, setTreatment }) => {
       email,
       phone,
     };
-    fetch("http://localhost:5000/booking", {
+    fetch("https://health-serves-server.vercel.app/booking", {
       method: "POST",
       headers: {
         "content-type": "application/json",
