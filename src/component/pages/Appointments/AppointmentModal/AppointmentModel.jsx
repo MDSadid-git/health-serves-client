@@ -1,5 +1,6 @@
 import { format } from "date-fns";
 import React, { useContext } from "react";
+import { toast } from "react-hot-toast";
 import { AuthContext } from "../../../../contexts/AuthProvider";
 
 const AppointmentModel = ({ treatment, seletDate, setTreatment }) => {
@@ -19,8 +20,21 @@ const AppointmentModel = ({ treatment, seletDate, setTreatment }) => {
       email,
       phone,
     };
-    console.log(bookAppontment);
-    setTreatment(null);
+    fetch("http://localhost:5000/booking", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(bookAppontment),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.acknowledged) {
+          toast.success("Booking Confirmed!!!");
+          setTreatment(null);
+        }
+      });
   };
   return (
     <>
@@ -58,6 +72,7 @@ const AppointmentModel = ({ treatment, seletDate, setTreatment }) => {
               className="input input-bordered input-sm w-full my-3"
               defaultValue={user?.name}
               name="name"
+              required
             />
             <input
               type="text"
@@ -72,6 +87,7 @@ const AppointmentModel = ({ treatment, seletDate, setTreatment }) => {
               placeholder="Phone"
               className="input input-bordered input-sm w-full my-3"
               name="phone"
+              required
             />
             <input
               type="submit"
