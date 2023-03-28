@@ -73,7 +73,7 @@ const AppointmentModel = ({ treatment, seletDate, setTreatment, refetch }) => {
               type="text"
               placeholder="Name"
               className="input input-bordered input-sm w-full my-3"
-              defaultValue={user?.name}
+              defaultValue={user?.displayName}
               name="name"
               required
             />

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import logo from "../../Assets/client_logos/ziggo.svg";
-import { Link } from "react-router-dom";
+
 import { MdMap, MdMail } from "react-icons/md";
 import { BsArrowRightShort, BsTelephoneFill } from "react-icons/bs";
 import Aos from "aos";
@@ -59,7 +59,7 @@ const Footer = () => {
               className="py-3 px-5 w-full rounded"
             />
             <button
-              className="bg-[#D0011C] hover-effect px-10 py-4 my-5 text-sm font-bold text-[#fff] hover:bg-[#fff] hover:text-[#000] duration-300 ease-out rounded w-full"
+              className="bg-[#D0011C] hover-effect px-10 py-4 my-5 text-sm font-bold text-[#fff] hover:bg-sky-400 duration-300 ease-out rounded w-full"
               type="submit"
             >
               SIGN UP

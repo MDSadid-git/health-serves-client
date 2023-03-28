@@ -7,7 +7,7 @@ import { AuthContext } from "../../../contexts/AuthProvider";
 import { UseTitle } from "../../Hooks/UseTitle";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, updateUser } = useContext(AuthContext);
   const [signUpError, setSignUPError] = useState("");
   const location = useLocation();
   const navigate = useNavigate();
@@ -31,6 +31,14 @@ const Register = () => {
         toast.success("Creat New Account!!!");
         navigate(from2, { replace: true });
         console.log(user);
+        const userInfo = {
+          displayName: data.name,
+        };
+        updateUser(userInfo)
+          .then(() => {
+            saveUser(data.name, data.email);
+          })
+          .catch((err) => console.log(err));
       })
       .catch((error) => {
         console.log(error.message);
