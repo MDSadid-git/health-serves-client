@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { toast } from "react-hot-toast";
 import { AuthContext } from "../../../../contexts/AuthProvider";
 
-const AppointmentModel = ({ treatment, seletDate, setTreatment }) => {
+const AppointmentModel = ({ treatment, seletDate, setTreatment, refetch }) => {
   const { user } = useContext(AuthContext);
   const handleModleAppointment = (event) => {
     event.preventDefault();
@@ -20,7 +20,7 @@ const AppointmentModel = ({ treatment, seletDate, setTreatment }) => {
       email,
       phone,
     };
-    fetch("https://health-serves-server.vercel.app/booking", {
+    fetch("https://health-serves-server-sadid-git.vercel.app/booking", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -32,7 +32,10 @@ const AppointmentModel = ({ treatment, seletDate, setTreatment }) => {
         console.log(data);
         if (data.acknowledged) {
           toast.success("Booking Confirmed!!!");
+          refetch();
           setTreatment(null);
+        } else {
+          toast.error(data.message);
         }
       });
   };

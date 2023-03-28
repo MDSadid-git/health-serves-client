@@ -56,10 +56,10 @@ const Footer = () => {
             <input
               type="text"
               placeholder="Enter your email"
-              className="py-3 px-5 w-full"
+              className="py-3 px-5 w-full rounded"
             />
             <button
-              className="bg-[#D0011C] hover-effect px-10 py-4 my-5 text-sm font-bold text-[#fff] hover:bg-[#fff] hover:text-[#000] duration-300 ease-out"
+              className="bg-[#D0011C] hover-effect px-10 py-4 my-5 text-sm font-bold text-[#fff] hover:bg-[#fff] hover:text-[#000] duration-300 ease-out rounded w-full"
               type="submit"
             >
               SIGN UP

@@ -51,7 +51,7 @@ const Banner = () => {
             </p>
             <div data-aos="fade-up">
               <Link to="/login">
-                <button className="bg-[#D0011C] hover-effect px-10 py-4 my-5 text-sm font-bold text-[#fff] hover:bg-sky-400 duration-300 ease-out">
+                <button className="bg-[#D0011C] hover-effect px-10 py-4 my-5 text-sm font-bold text-[#fff] hover:bg-sky-400 duration-300 ease-out rounded-lg">
                   Get Started
                 </button>
               </Link>

@@ -1,5 +1,5 @@
-import React, { useContext, useState } from "react";
-import logo from "../../Assets/DFS-Logo-Statement.png";
+import React, { useContext } from "react";
+import logo from "../../Assets/Hs.png";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider";
 import { toast } from "react-hot-toast";
@@ -64,9 +64,9 @@ const Navbar = () => {
           </div>
           <Link
             to="/"
-            className="text-emerald-400 font-bold normal-case md:text-4xl text-xl"
+            className="text-emerald-400 font-bold normal-case md:text-4xl text-xl md:block hidden"
           >
-            <img src={logo} alt="logo" className="w-20 bg-cover" />
+            <img src={logo} alt="logo" className="w-20 bg-cover  " />
           </Link>
         </div>
 
