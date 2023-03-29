@@ -28,9 +28,20 @@ const Navbar = () => {
         <Link to="/">Reviews</Link>
       </li>
       {user?.uid && (
-        <li className="hover:text-[#D0011C]">
-          <Link to="/dashboard">Dashboard</Link>
-        </li>
+        <>
+          <li className="hover:text-[#D0011C]">
+            <Link to="/dashboard">Dashboard</Link>
+          </li>
+          <li className="hover:text-[#D0011C]">
+            <label
+              htmlFor="dashboardDrawer"
+              tabIndex={2}
+              className="btn btn-ghost lg:hidden"
+            >
+              Dashboard Item
+            </label>
+          </li>
+        </>
       )}
     </React.Fragment>
   );
@@ -56,7 +67,7 @@ const Navbar = () => {
               </svg>
             </label>
             <ul
-              tabIndex={0}
+              tabIndex={1}
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 font-bold"
             >
               {menuBar}
@@ -84,7 +95,6 @@ const Navbar = () => {
               >
                 Log Out
               </Link>
-              {/* <h1>Profile</h1> */}
             </>
           ) : (
             <Link

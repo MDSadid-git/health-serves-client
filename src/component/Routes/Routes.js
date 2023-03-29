@@ -7,6 +7,7 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import Dashboard from "../pages/Dashboard/DashBoard/DashBoard";
 import DashBoardLayout from "../Layout/DashBoardLayout";
+import MyAppintment from "../pages/Dashboard/MyDashBoardAppo/MyAppintment";
 
 export const router = createBrowserRouter([
   {
@@ -41,7 +42,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/dashboard",
-        element: <Dashboard />,
+        element: <MyAppintment />,
       },
     ],
   },
