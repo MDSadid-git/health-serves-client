@@ -1,4 +1,5 @@
 // import { GoogleAuthProvider } from "firebase/auth";
+import { GoogleAuthProvider } from "firebase/auth";
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
@@ -6,8 +7,9 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider";
 import { UseTitle } from "../../Hooks/UseTitle";
 
+const googleProvider = new GoogleAuthProvider();
 const Register = () => {
-  const { createUser, updateUser } = useContext(AuthContext);
+  const { createUser, updateUser, signInWithGoogle } = useContext(AuthContext);
   const [signUpError, setSignUPError] = useState("");
   const location = useLocation();
   const navigate = useNavigate();
@@ -45,14 +47,13 @@ const Register = () => {
       });
   };
   const UserGoogle = () => {
-    // signInWithGoogle(googleProvider)
-    //   .then((resul) => {
-    //     const user = resul.user;
-    //     toast.success("Creat New Account with google!!!");
-    //     saveUser(user.email, user.displayName);
-    //     navigate(from2, { replace: true });
-    //   })
-    //   .catch((e) => console.error(e));
+    signInWithGoogle(googleProvider)
+      .then((resul) => {
+        const user = resul.user;
+        navigate(from2, { replace: true });
+        toast.success("Register success with Google!!!");
+      })
+      .catch((e) => console.error(e));
   };
   const saveUser = (email, name, specialty) => {
     const user = { email, name, specialty };

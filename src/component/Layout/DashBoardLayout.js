@@ -1,9 +1,11 @@
 import React from "react";
 
 import { Outlet } from "react-router-dom";
+import { UseTitle } from "../Hooks/UseTitle";
 import Navbar from "../Shared/Navbar/Navbar";
 
 const DashBoardLayout = () => {
+  UseTitle("Dashboard");
   return (
     <div className="max-w-[1500px] mx-auto">
       <Navbar />

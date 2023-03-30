@@ -1,3 +1,4 @@
+import { GoogleAuthProvider } from "firebase/auth";
 import React, { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
@@ -5,6 +6,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider";
 import { UseTitle } from "../../Hooks/UseTitle";
 import "./Login.css";
+
+const googleProvider = new GoogleAuthProvider();
 
 const Login = () => {
   const { singIn, signInWithGoogle } = useContext(AuthContext);
@@ -35,13 +38,13 @@ const Login = () => {
       });
   };
   const UserGoogle = () => {
-    // signInWithGoogle(googleProvider)
-    //   .then((resul) => {
-    //     const user = resul.user;
-    //     toast.success("Login success with Google!!!");
-    //     setLoginUserEmail(user.email);
-    //   })
-    //   .catch((e) => console.error(e));
+    signInWithGoogle(googleProvider)
+      .then((resul) => {
+        const user = resul.user;
+        navigate(from2, { replace: true });
+        toast.success("Login success with Google!!!");
+      })
+      .catch((e) => console.error(e));
   };
   return (
     <div className="h-[800px] flex justify-center items-center">

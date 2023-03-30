@@ -4,6 +4,7 @@ import {
   getAuth,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  signInWithPopup,
   signOut,
   updateProfile,
 } from "firebase/auth";
@@ -29,6 +30,10 @@ const AuthProvider = ({ children }) => {
   const updateUser = (userInfo) => {
     return updateProfile(auth.currentUser, userInfo);
   };
+  const signInWithGoogle = (provider) => {
+    setLoading(true);
+    return signInWithPopup(auth, provider);
+  };
   useEffect(() => {
     const unsubcreibe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
@@ -43,6 +48,7 @@ const AuthProvider = ({ children }) => {
     user,
     logOut,
     loading,
+    signInWithGoogle,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
