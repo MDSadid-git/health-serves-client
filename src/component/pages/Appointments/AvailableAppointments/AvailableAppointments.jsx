@@ -1,11 +1,16 @@
 import { useQuery } from "@tanstack/react-query";
 import { format } from "date-fns";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Loading from "../../../Shared/Loading/Loading";
 import AppointmentModel from "../AppointmentModal/AppointmentModel";
 import Options from "./Options";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const AvailableAppointments = ({ seletDate }) => {
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
   const [treatment, setTreatment] = useState(null);
   const date = format(seletDate, "PP");
   const {
@@ -27,7 +32,10 @@ const AvailableAppointments = ({ seletDate }) => {
       <p className="text-center my-5">
         You have selected Date: {format(seletDate, "PP")}
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 ">
+      <div
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 "
+        data-aos="zoom-in"
+      >
         {appointmentServes.map((serves) => (
           <Options
             serves={serves}
