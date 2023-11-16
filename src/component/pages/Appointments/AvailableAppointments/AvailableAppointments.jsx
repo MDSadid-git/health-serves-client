@@ -44,6 +44,7 @@ const AvailableAppointments = ({ seletDate }) => {
           />
         ))}
       </div>
+
       {treatment && (
         <AppointmentModel
           treatment={treatment}
